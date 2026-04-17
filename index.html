@@ -80,6 +80,126 @@
     rel="stylesheet">
 
   <style>
+    .pema-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: linear-gradient(135deg, #0d0d1a, #181826);
+      border: 1px solid #d4a010;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .pema-images {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+      background: #000;
+    }
+
+    .pema-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pema-info {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .pema-badge {
+      display: inline-block;
+      background: #e40172;
+      color: #fff;
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 13px;
+      padding: 4px 14px;
+      border-radius: 50px;
+      width: fit-content;
+    }
+
+    .pema-urdu {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #f5c518;
+      direction: rtl;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .pema-eng {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a89878;
+      margin: 0;
+    }
+
+    .pema-price {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 16px 18px;
+      background: rgba(245, 197, 66, 0.07);
+      border: 1px solid rgba(245, 197, 66, 0.2);
+      border-radius: 10px;
+      width: fit-content;
+    }
+
+    .price-label {
+      font-size: 12px;
+      color: #a89878;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .price-amount {
+      font-size: 30px;
+      font-weight: 800;
+      color: #f5c518;
+      line-height: 1.1;
+    }
+
+    .pema-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      background: linear-gradient(135deg, #25d366, #128c4a);
+      color: #fff;
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    @media (max-width: 768px) {
+      .pema-card {
+        grid-template-columns: 1fr;
+      }
+
+      .pema-images {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: unset;
+      }
+
+      .pema-img {
+        height: 150px;
+      }
+
+      .pema-info {
+        padding: 24px 20px;
+      }
+    }
+
     /* ===== RESET & BASE ===== */
     *,
     *::before,
@@ -311,7 +431,7 @@
       color: #a5a3af;
       font-size: 15px;
       font-weight: 800;
-      font-family:'Times New Roman', Times, serif;
+      font-family: 'Times New Roman', Times, serif;
       letter-spacing: 2px;
       text-transform: uppercase;
       padding: 5px 14px;
@@ -365,11 +485,11 @@
       transition: transform 0.2s, background 0.2s;
     }
 
-     .btn-primary:hover { 
-      background: rgba(10, 10, 10, 0.322); 
+    .btn-primary:hover {
+      background: rgba(10, 10, 10, 0.322);
       transform: translateY(-2px);
-      border:1px solid rgb(12, 12, 9);
-     }
+      border: 1px solid rgb(12, 12, 9);
+    }
 
     .btn-secondary {
       display: inline-flex;
@@ -732,6 +852,7 @@
   </style>
 </head>
 
+
 <body>
 
   <!-- ===== HEADER ===== -->
@@ -798,8 +919,29 @@
   <section id="gents" aria-labelledby="gents-heading">
     <h2 id="gents-heading">Gents Collection</h2>
     <p class="section-intro">Premium fabrics for the modern gentleman — from daily wear to winter warmth.</p>
-    <div class="grid">
+   
 
+    <div class="grid">
+      <div class="pema-card">
+  <div class="pema-images">
+    <img src="pema1.jpg" alt="Super Pema Cotton fabric" class="pema-img">
+    <img src="pema2.jpg" alt="Super Pema Cotton fabric design" class="pema-img">
+  </div>
+  <div class="pema-info">
+    <span class="pema-badge">New Quality</span>
+    <h3 class="pema-urdu">سپر پیما کاٹن</h3>
+    <p class="pema-eng">Super Pema Cotton</p>
+    <div class="pema-price">
+      <span class="price-label">5 Meter Suit, Just</span>
+      <span class="price-amount">Rs. 3,500</span>
+    </div>
+    <a href="https://wa.me/923322369647?text=Hello!%20I%20want%20to%20order%20Super%20Pema%20Cotton%205%20meter%20suit%20for%20Rs.3500."
+       target="_blank" rel="noopener noreferrer" class="pema-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.523 5.845L.057 23.273a.75.75 0 0 0 .92.92l5.428-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.497-5.2-1.367l-.373-.217-3.873 1.046 1.046-3.873-.217-.373A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      ابھی آرڈر کریں
+    </a>
+  </div>
+</div>
       <article class="card">
         <video class="card-media" autoplay muted loop playsinline preload="metadata"
           aria-label="Wash and wear fabric display">
@@ -841,6 +983,7 @@
           <p>Original Grace, H.Afzal and more. Warm and comfortable for cold weather.</p>
         </div>
       </article>
+
 
     </div>
   </section>
